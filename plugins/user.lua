@@ -12,7 +12,7 @@ return {
         indent = {
           enable = true,
           chars = { "|" },
-          use_treesitter = true,
+          use_treesitter = false,
           style = {
             vim.fn.synIDattr(
               vim.fn.synIDtrans(
