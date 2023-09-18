@@ -18,8 +18,8 @@ return {
               vim.fn.synIDtrans(
                 vim.fn.hlID("Whitespace")
               ),
-            "fg",
-            "gui"
+              "fg",
+              "gui"
             ),
           },
         },
