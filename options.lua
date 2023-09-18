@@ -2,7 +2,6 @@ return {
   opt = {
     relativenumber = true,
     spell = false,
-    signcolumn = "number",
     guifont = "Hack:h12",
   },
   g = {
