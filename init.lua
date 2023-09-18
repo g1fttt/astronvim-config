@@ -52,6 +52,11 @@ return {
     servers = {
       -- "pyright"
     },
+    config = {
+      rust_analyzer = {
+        lens = { implementations = false }
+      }
+    }
   },
 
   -- Configure require("lazy").setup() options
