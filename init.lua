@@ -54,7 +54,9 @@ return {
     },
     config = {
       rust_analyzer = {
-        lens = { implementations = false }
+        lens = {
+          implementations = { enable = false }
+        }
       }
     }
   },
