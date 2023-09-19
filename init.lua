@@ -50,15 +50,20 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "clangd",
+      "lua_ls",
+      "pyright",
+      "rust_analyzer",
     },
     config = {
       rust_analyzer = {
-        lens = {
-          implementations = { enable = false }
-        }
-      }
-    }
+        settings = {
+          ["rust-analyzer"] = {
+            lens = { implementations = { enable = false }, },
+          },
+        },
+      },
+    },
   },
 
   -- Configure require("lazy").setup() options
