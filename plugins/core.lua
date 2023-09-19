@@ -21,9 +21,10 @@ return {
     end,
   },
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
-  -- You can disable default plugins as follows:
-  -- { "max397574/better-escape.nvim", enabled = false },
-  --
+  {
+    "akinsho/toggleterm.nvim",
+    opts = function(_, opts) opts.shell = "nu" end
+  }
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
   --   "L3MON4D3/LuaSnip",
