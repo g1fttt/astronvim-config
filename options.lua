@@ -5,7 +5,7 @@ return function(local_vim)
   local_vim.g.resession_enabled = true
 
   if vim.g.neovide then
-    local_vim.opt.guifont = "Hack:h12"
+    local_vim.opt.guifont = "Hack Nerd Font:h12"
 
     local_vim.g.neovide_hide_mouse_when_typing = true
     local_vim.g.neovide_cursor_vfx_mode = "ripple"
