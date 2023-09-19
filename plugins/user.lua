@@ -2,7 +2,7 @@ return {
   "savq/melange-nvim",
   {
     "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
+    event = "UIEnter",
     config = function()
       --  FIXME
       --- @diagnostic disable: missing-fields
@@ -25,5 +25,19 @@ return {
         },
       })
     end
-  }
+  },
+  {
+    "rktjmp/paperplanes.nvim",
+    event = "BufEnter",
+    -- TODO: Append buffer extension after link
+    -- https://github.com/rktjmp/paperplanes.nvim#configuration--use
+    config = function()
+      require("paperplanes").setup({
+        register = "*",
+        provider = "paste.rs",
+        provider_options = {},
+        notifier = vim.notify,
+      })
+    end
+  },
 }
