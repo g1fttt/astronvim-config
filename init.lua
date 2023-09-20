@@ -59,7 +59,11 @@ return {
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
-            lens = { implementations = { enable = false }, },
+            lens = {
+              implementations = { enable = false },
+              run = { enable = false },
+              debug = { enable = false },
+            },
           },
         },
       },
