@@ -1,6 +1,13 @@
 return {
   { "savq/melange-nvim", lazy = false },
-  { "nyoom-engineering/oxocarbon.nvim", lazy = false },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    lazy = false,
+    config = function()
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" } )
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    end,
+  },
   {
     "shellRaining/hlchunk.nvim",
     event = "UIEnter",
