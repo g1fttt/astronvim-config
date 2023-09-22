@@ -1,5 +1,6 @@
 return {
-  "savq/melange-nvim",
+  { "savq/melange-nvim", lazy = false },
+  { "nyoom-engineering/oxocarbon.nvim", lazy = false },
   {
     "shellRaining/hlchunk.nvim",
     event = "UIEnter",
@@ -27,17 +28,8 @@ return {
     end
   },
   {
-    "rktjmp/paperplanes.nvim",
-    event = "BufEnter",
-    -- TODO: Append buffer extension after link
-    -- https://github.com/rktjmp/paperplanes.nvim#configuration--use
-    config = function()
-      require("paperplanes").setup({
-        register = "*",
-        provider = "paste.rs",
-        provider_options = {},
-        notifier = vim.notify,
-      })
-    end
-  },
+    "elihunter173/dirbuf.nvim",
+    event = "BufEnter", -- NOTE: Buggy with Neo-Tree
+    config = function() require("dirbuf").setup({}) end
+  }
 }
