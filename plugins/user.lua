@@ -1,42 +1,36 @@
 return {
-  { "savq/melange-nvim", lazy = false },
   {
-    "nyoom-engineering/oxocarbon.nvim",
-    lazy = false,
+    "catppuccin/nvim",
+    priorty = 1000,
     config = function()
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" } )
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      require("catppuccin").setup({
+        flavour = "macchiato",
+      })
     end,
   },
   {
     "shellRaining/hlchunk.nvim",
     event = "UIEnter",
-    config = function()
-      --  FIXME
-      --- @diagnostic disable: missing-fields
-      require("hlchunk").setup({
-        line_num = { enable = false },
-        blank = { enable = false },
-        indent = {
-          enable = true,
-          chars = { "|" },
-          use_treesitter = false,
-          style = {
-            vim.fn.synIDattr(
-              vim.fn.synIDtrans(
-                vim.fn.hlID("Whitespace")
-              ),
-              "fg",
-              "gui"
-            ),
-          },
-        },
-      })
-    end
+    opts = {
+      line_num = { enable = false },
+      blank = { enable = false },
+      indent = {
+        enable = true,
+        use_treesitter = false,
+      },
+    },
   },
   {
-    "elihunter173/dirbuf.nvim",
-    event = "BufEnter", -- NOTE: Buggy with Neo-Tree
-    config = function() require("dirbuf").setup({}) end
+    "stevearc/oil.nvim",
+    event = "UIEnter",
+    opts = {
+      default_file_explorer = false,
+      view_options = {
+        show_hidden = true,
+        is_hidden_file = function(name, _)
+          return vim.startswith(name, '.')
+        end,
+      }
+    },
   }
 }
