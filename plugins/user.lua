@@ -1,12 +1,7 @@
 return {
   {
-    "catppuccin/nvim",
-    priorty = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "macchiato",
-      })
-    end,
+    "zootedb0t/citruszest.nvim",
+    priority = 1000,
   },
   {
     "shellRaining/hlchunk.nvim",
@@ -14,9 +9,16 @@ return {
     opts = {
       line_num = { enable = false },
       blank = { enable = false },
+      chunk = {
+        style = {
+          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("LineNr")), "fg", "gui") },
+        },
+      },
       indent = {
         enable = true,
-        use_treesitter = false,
+        style = {
+          { fg = "#585e59" },
+        },
       },
     },
   },
@@ -24,6 +26,7 @@ return {
     "stevearc/oil.nvim",
     event = "UIEnter",
     opts = {
+      skip_confirm_for_simple_edits = true,
       default_file_explorer = false,
       view_options = {
         show_hidden = true,
@@ -32,5 +35,14 @@ return {
         end,
       }
     },
-  }
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "UIEnter",
+    opts = {
+      signs = false,
+      highlight = { keyword = "bg" },
+    },
+  },
 }
