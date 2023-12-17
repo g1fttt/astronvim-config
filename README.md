@@ -15,3 +15,15 @@ mv ~/.local/share/nvim ~/.local/share/nvim.bak
 ```shell
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 ```
+
+#### Clone this repository
+```shell
+git clone https://github.com/g1fttt/astronvim_config ~/
+config/nvim/lua/user
+```
+
+#### Start NeoVim
+
+```shell
+nvim
+```
