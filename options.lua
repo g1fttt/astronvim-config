@@ -8,5 +8,6 @@ return {
     resession_enabled = true,
     neovide_hide_mouse_when_typing = true,
     neovide_cursor_vfx_mode = "ripple",
+    zig_fmt_autosave = false,
   }
 }

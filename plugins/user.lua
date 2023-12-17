@@ -5,7 +5,7 @@ return {
   },
   {
     "shellRaining/hlchunk.nvim",
-    event = "UIEnter",
+    event = "BufEnter",
     opts = {
       line_num = { enable = false },
       blank = { enable = false },
@@ -13,6 +13,7 @@ return {
         style = {
           { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("LineNr")), "fg", "gui") },
         },
+        use_treesitter = false,
       },
       indent = {
         enable = true,
@@ -24,7 +25,7 @@ return {
   },
   {
     "stevearc/oil.nvim",
-    event = "UIEnter",
+    event = "BufEnter",
     opts = {
       skip_confirm_for_simple_edits = true,
       default_file_explorer = false,
@@ -34,15 +35,6 @@ return {
           return vim.startswith(name, '.')
         end,
       }
-    },
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    event = "UIEnter",
-    opts = {
-      signs = false,
-      highlight = { keyword = "bg" },
     },
   },
 }

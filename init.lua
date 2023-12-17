@@ -104,9 +104,15 @@ return {
               debug = { enable = false },
             },
             checkOnSave = {
-              command = "clippy"
+              command = "clippy",
             },
           },
+        },
+      },
+      zls = {
+        settings = {
+          warn_style = true,
+          enable_ast_check_diagnostics = false, -- Prevents freezing of the buffer write message
         },
       },
     },
