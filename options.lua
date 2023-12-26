@@ -1,6 +1,6 @@
 return {
   opt = {
-    guifont = "Hack Nerd Font:h12",
+    guifont = "JetBrainsMono Nerd Font:h12",
     relativenumber = true,
     spell = false,
   },

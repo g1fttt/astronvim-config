@@ -10,7 +10,7 @@ return {
       desc = "Pick to close",
     },
     ["<F11>"] = function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end,
-    ["-"] = { "<CMD>Oil<CR>" }
+    ["-"] = { "<CMD>Oil<CR>" },
   },
   t = {
     -- setting a mapping to false will disable it
