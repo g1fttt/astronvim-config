@@ -76,6 +76,7 @@ return {
         -- fill the rest of the statusline
         -- the elements after this will appear on the right of the statusline
         status.component.fill(),
+        status.component.diagnostics { surround = { separator = "right" } },
         status.component.file_info {
           filetype = {},
           filename = false,
