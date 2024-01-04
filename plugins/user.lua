@@ -1,6 +1,6 @@
 return {
   {
-    "zootedb0t/citruszest.nvim",
+    "savq/melange-nvim",
     priority = 1000,
   },
   {
@@ -11,15 +11,9 @@ return {
       blank = { enable = false },
       chunk = {
         style = {
-          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("LineNr")), "fg", "gui") },
+          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("CursorLineNr")), "fg", "gui") },
         },
         use_treesitter = false,
-      },
-      indent = {
-        enable = true,
-        style = {
-          { fg = "#585e59" },
-        },
       },
     },
   },
@@ -53,4 +47,20 @@ return {
       },
     },
   },
+  { "LhKipp/nvim-nu", ft = { "nu" } },
+  {
+    "j-hui/fidget.nvim",
+    tag = "v1.0.0",
+    event = "BufEnter",
+    opts = {},
+  },
+  {
+    "Saecki/crates.nvim",
+    tag = "stable",
+    event = { "BufRead Cargo.toml" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      null_ls = { enabled = true },
+    },
+  }
 }
