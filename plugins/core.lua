@@ -25,9 +25,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
-      opts.sources = {
-        { name = "crates" },
-      }
+      table.insert(opts, { name = "crates" })
       return opts
     end,
   },
