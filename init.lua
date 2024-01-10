@@ -28,7 +28,7 @@ return {
   icons = {
     VimIcon = "",
     GitBranch = "",
-    GitAdd = "",
+     GitAdd = "",
     GitChange = "",
     GitDelete = "",
   },

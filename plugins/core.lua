@@ -18,6 +18,7 @@ return {
     end,
   },
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   {
     "akinsho/toggleterm.nvim",
     opts = function(_, opts) opts.shell = "nu" end,

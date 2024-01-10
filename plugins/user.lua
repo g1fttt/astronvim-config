@@ -47,7 +47,6 @@ return {
       },
     },
   },
-  { "LhKipp/nvim-nu", ft = { "nu" } },
   {
     "j-hui/fidget.nvim",
     tag = "v1.0.0",
