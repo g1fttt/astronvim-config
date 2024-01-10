@@ -62,5 +62,10 @@ return {
     opts = {
       null_ls = { enabled = true },
     },
+  },
+  {
+    "smoka7/hop.nvim",
+    event = "BufEnter",
+    opts = {},
   }
 }

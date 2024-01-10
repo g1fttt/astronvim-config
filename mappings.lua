@@ -1,20 +1,22 @@
+local hop = require('hop')
+
 return {
   n = {
-    ["<leader>b"] = { name = "Buffers" },
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
+    ["<leader>s"] = { name = "󰣉 Hop" },
+    ["<leader>sw"] = {
+      function() hop.hint_words({}) end,
+      desc = "Hint words",
     },
-    ["<F11>"] = function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end,
+    ["<leader>sc"] = {
+      function() hop.hint_char1({}) end,
+      desc = "Hint char",
+    },
+    ["<leader>sa"] = {
+      function() hop.hint_anywhere({}) end,
+      desc = "Hint anywhere",
+    },
     ["-"] = { "<CMD>Oil<CR>" },
   },
-  t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
-  },
+  t = {},
   v = {},
 }
