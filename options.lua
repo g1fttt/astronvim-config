@@ -1,4 +1,4 @@
-opts = {
+local opts = {
   opt = {
     relativenumber = true,
     spell = false,
