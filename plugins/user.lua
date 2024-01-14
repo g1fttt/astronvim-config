@@ -66,11 +66,7 @@ return {
     opts = {},
   },
   {
-    "svrana/neosolarized.nvim",
-    dependencies = { "tjdevries/colorbuddy.nvim" },
-    opts = {
-      comment_italics = true,
-      background_set = true,
-    },
-  },
+    "blazkowolf/gruber-darker.nvim",
+    priority = 1000,
+  }
 }
