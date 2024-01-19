@@ -51,7 +51,7 @@ return {
     "j-hui/fidget.nvim",
     tag = "v1.0.0",
     event = "BufEnter",
-    opts = {},
+    config = true,
   },
   {
     "Saecki/crates.nvim",
@@ -63,10 +63,17 @@ return {
   {
     "smoka7/hop.nvim",
     event = "BufEnter",
-    opts = {},
+    config = true,
+  },
+  {
+    "ellisonleao/glow.nvim",
+    cmd = "Glow",
+    opts = {
+      border = "single",
+    },
   },
   {
     "blazkowolf/gruber-darker.nvim",
     priority = 1000,
-  }
+  },
 }

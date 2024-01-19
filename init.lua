@@ -63,7 +63,7 @@ return {
   lsp = {
     formatting = {
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = true,
         allow_filetypes = {},
         ignore_filetypes = {},
       },
@@ -77,6 +77,7 @@ return {
     servers = {
       "pyright",
       "rust_analyzer",
+      "nim_langserver",
     },
     config = {
       rust_analyzer = {
