@@ -1,5 +1,5 @@
 local get_hlgroup = require("astronvim.utils").get_hlgroup
 
 return {
-  FoldColumn = { bg = get_hlgroup("Normal").bg },
+  ["@property"] = { fg = get_hlgroup("@variable").fg },
 }
