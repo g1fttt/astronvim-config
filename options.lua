@@ -8,6 +8,7 @@ local opts = {
     resession_enabled = true,
     zig_fmt_autosave = false,
     lsp_document_highlight_enabled = false,
+    cmdheight = 1,
   },
 }
 

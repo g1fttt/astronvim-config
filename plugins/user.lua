@@ -51,7 +51,13 @@ return {
     "j-hui/fidget.nvim",
     tag = "v1.0.0",
     event = "BufEnter",
-    config = true,
+    opts = {
+      notification = {
+        window = {
+          y_padding = 1,
+        },
+      },
+    },
   },
   {
     "Saecki/crates.nvim",
@@ -64,13 +70,6 @@ return {
     "smoka7/hop.nvim",
     event = "BufEnter",
     config = true,
-  },
-  {
-    "ellisonleao/glow.nvim",
-    cmd = "Glow",
-    opts = {
-      border = "single",
-    },
   },
   {
     "blazkowolf/gruber-darker.nvim",

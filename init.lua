@@ -88,22 +88,32 @@ return {
               run = { enable = false },
               debug = { enable = false },
             },
-            checkOnSave = {
-              command = "clippy",
-            },
+            checkOnSave = { command = "clippy" },
           },
         },
       },
-      zls = {
+      gopls = {
         settings = {
-          warn_style = true,
-          enable_ast_check_diagnostics = false, -- Prevents freezing of the buffer write message
+          gopls = {
+            codelenses = {
+              generate = false,
+              regenerate_cgo = false,
+              tidy = false,
+              upgrade_dependecy = false,
+              vendor = false,
+            },
+            staticcheck = true,
+          },
         },
       },
     },
     on_attach = function(client, _)
       if client.supports_method("textDocument/documentHighlight") then
         vim.api.nvim_del_augroup_by_name("lsp_document_highlight")
+      end
+
+      if client.name == "clangd" then
+        client.server_capabilities.documentFormattingProvider = false
       end
     end,
   },
@@ -135,6 +145,31 @@ return {
         vim.opt.tabstop = 2
       end,
     })
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "go",
+      callback = function()
+        vim.opt.shiftwidth = 4
+        vim.opt.tabstop = 4
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("CmdlineEnter", {
+      callback = function()
+        local original_height = vim.o.cmdheight
+        if vim.o.cmdheight ~= 0 or not vim.g.cmdheight or vim.g.cmdheight == 0 then
+          return false
+        end
+        vim.o.cmdheight = vim.g.cmdheight
+        vim.api.nvim_create_autocmd("CmdlineLeave", {
+          callback = function()
+            vim.o.cmdheight = original_height
+            return true
+          end,
+        })
+      end
+    })
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
